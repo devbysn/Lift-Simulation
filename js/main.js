@@ -197,7 +197,7 @@ function createFloor(index) {
 
   // floor number
   let floorNumber = document.createElement("span");
-  floorNumber.innerText = "Floor : " + (index + 1);
+  floorNumber.innerText = + (index + 1);
   let btnContainer = document.createElement("div");
   btnContainer.classList.add("box", "btn-box");
   let upBtn = createBtn("UP");
