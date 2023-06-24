@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <h1>Lift Control System</h1>
+  <!-- Form for user input of floors and lifts -->
+  <form id="lift-form">
+    <div>
+      <label for="floor">Number of Floors:</label>
+      <input type="number" name="floor" id="floor-num" value="5" />
+    </div>
+    <div>
+      <label for="lifts">Number of Lifts:</label>
+      <input type="number" name="lifts" id="lift-num" value="2" />
+    </div>
+    <button type="submit">Generate Building Structure</button>
+  </form>
+  <button id="regenerate">Change Building Structure</button>
+
+  <!-- -------Lifts and Floors goes here------- -->
+  <div class="error-log">
+    <span class="error-text"></span>
+  </div>
+  <section class="container">
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

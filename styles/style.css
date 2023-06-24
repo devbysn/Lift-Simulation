@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+html {
+  --primary-colour: #b6eada;
+  --secondary-colour: #5b8fb9;
+  --hover-colour: #301e67;
+  --bg-colour: #03001c;
+}
+
+body {
+  color: var(--primary-colour);
+  background-color: var(--bg-colour);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Regenerate button */
+#regenerate {
+  display: none;
+  text-align: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+input[type="number"] {
+  padding: 10px;
+  border: none;
+  background-color: #301e67;
+  color: var(--primary-colour);
+  margin: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: hsl(207, 40%, 54%);
+  color: var(--primary-colour);
+  cursor: pointer;
+  white-space: nowrap;
+
+}
+
+button:hover {
+  background-color: var(--primary-colour);
+  color: #03001c;
+}
+
+.lift-number {
+  color: var(--primary-colour);
+  font-weight: bold;
+  margin: 10px;
+}
+
+.lift-status {
+  text-align: center;
+  color: var(--primary-colour);
+}
+
+
+/* .text-center {
+  text-align: center;
+} */ */
+
+.error-log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-text {
+  font-size: small;
+  font-weight: 300;
+  color: red;
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  position: relative;
+  width: 100%;
+}
+
+.single-floor {
+  height: 120px;
+  /* background-color: var(--hover-colour); */
+  border-bottom: 1px solid var(--primary-colour);
+  display: flex;
+  /* flex-direction: column; */
+  gap: 1em;
+  width: 97%;
+  align-items: flex-start;
+  margin-left: 10px; 
+}
+
+.box {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+}
+
+.btn-box {
+  display: flex;
+  gap: 0.5em;
+  max-width: 5%;
+  /* border: rgb(255, 255, 255) 1px solid; */
+}
+
+.elevator {
+  height: 110px;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+}
+
+.door {
+  width: 50%;
+  height: 100px;
+  position: absolute;
+}
+
+.left {
+  background-color: var(--primary-colour);
+  border: 1px solid var(--hover-colour);
+  left: 0;
+}
+
+.right {
+  background-color: var(--primary-colour);
+  right: 0;
+  border: 1px solid black;
+}
+
+
+
+/* @media only screen and (max-width: 600px) {
+  .elevator {
+    width: 50px;
+  }
+} */
