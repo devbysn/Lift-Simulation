@@ -17,6 +17,7 @@ regenerateButton.addEventListener("click", (event) => {
 // Event Handler for form submission
 liftForm.addEventListener("submit", (event) => {
   event.preventDefault();
+  document.querySelector(".error-text").textContent = "";
 
   console.log("Form submitted");
 
@@ -25,10 +26,10 @@ liftForm.addEventListener("submit", (event) => {
   let liftNum = parseInt(liftNumInput.value);
 
   // validate input
-  if (liftNum < 1 || liftNum > 7) {
+  if (liftNum < 1 || liftNum > 6) {
     console.log("Invalid lift number input");
     document.querySelector(".error-text").textContent =
-      "Please enter lift value between 1 to 7";
+      "Please enter lift value between 1 to 6";
     return;
   }
   if (floorNum < 2 || floorNum > 10) {
@@ -99,7 +100,11 @@ function doorAnimation(index, currLift) {
 function closeLift(leftDoor, rightDoor, index) {
   console.log(`Closing doors for lift ${index}`);
   const duration = 1000;
-  const targetWidth = 50;
+  let targetWidth = 50;
+  if(document.documentElement.clientWidth<700){
+    targetWidth=20;
+  }
+  console.log("Target Width : ", targetWidth);
   const start = performance.now();
 
   function animateWidth(timestamp) {
@@ -214,7 +219,7 @@ function createFloor(index) {
 
   // floor number
   let floorNumber = document.createElement("span");
-  floorNumber.innerText = "Floor : " + (index + 1);
+  floorNumber.innerText = index + 1;
   let btnContainer = document.createElement("div");
   btnContainer.classList.add("box", "btn-box");
   let upBtn = createBtn("UP");
@@ -245,23 +250,31 @@ function createLift(n) {
   console.log("Creating", n, "lifts");
   let fg = document.createDocumentFragment();
   for (let i = 0; i < n; i++) {
-    fg.append(lift());
+    fg.append(lift(i));
   }
   return fg;
 }
 
-function lift() {
+function lift(liftNumber) {
+
   console.log("Creating lift");
   let liftContainer = document.createElement("div");
   let elevator = document.createElement("div");
+  let liftNumberElement = document.createElement("div"); // New element for lift number
+
   liftContainer.classList.add("box");
   elevator.classList.add("elevator");
+  liftNumberElement.classList.add("lift-number"); // Add CSS class for styling lift number
+
+  liftNumberElement.textContent = "Lift " + parseInt(liftNumber+1); // Set the lift number text content
+
   let leftDoor = document.createElement("div");
   let rightDoor = document.createElement("div");
   leftDoor.classList.add("door", "left");
   rightDoor.classList.add("door", "right");
+  leftDoor.appendChild(liftNumberElement);
   elevator.id = "elevator";
-  elevator.append(leftDoor, rightDoor);
+  elevator.append(leftDoor, rightDoor); // Add lift number element to the elevator
   liftContainer.append(elevator);
   return liftContainer;
 }

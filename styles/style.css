@@ -63,7 +63,6 @@ button {
   color: var(--primary-colour);
   cursor: pointer;
   white-space: nowrap;
-
 }
 
 button:hover {
@@ -72,14 +71,11 @@ button:hover {
 }
 
 .lift-number {
-  color: var(--primary-colour);
+  color: var(--hover-colour);
   font-weight: bold;
-  margin: 10px;
-}
-
-.lift-status {
+  font-size: 0.5rem;
   text-align: center;
-  color: var(--primary-colour);
+  margin-top: 1rem;
 }
 
 .error-log {
@@ -110,7 +106,7 @@ button:hover {
   gap: 1em;
   width: 97%;
   align-items: flex-start;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .box {
@@ -131,7 +127,7 @@ button:hover {
 
 .elevator {
   height: 110px;
-  width: 100px;
+  width: 6rem;
   position: absolute;
   bottom: 0;
 }
@@ -154,3 +150,21 @@ button:hover {
   border: 1px solid black;
 }
 
+.btn {
+  padding: 5px 8px; /* Adjusted padding for smaller buttons */
+}
+
+@media (max-width: 600px) {
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  .elevator {
+    width: 40px; /* Decreased width for mobile screens */
+    /* height: 20px; */
+  }
+  .btn {
+    padding: 2px 5px; /* Adjusted padding for smaller buttons in mobile screens */
+  }
+}
